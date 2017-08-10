@@ -8,7 +8,7 @@ public class BLtoDLL {
 		TreeNode left = bTtoDLLUtil(root.left);  // converting left subtree to DLL
 
 		while (left != null && left.right != null)  // finding the right most node of DLL formed
-		left = left.right;
+			left = left.right;
 
 		if (left != null)
 			left.right = root;
@@ -18,7 +18,7 @@ public class BLtoDLL {
 		TreeNode right = bTtoDLLUtil(root.right);
 
 		while (right != null && right.left != null)
-		right = right.left;
+			right = right.left;
 
 		if (right != null)
 			right.left = root;
@@ -26,20 +26,17 @@ public class BLtoDLL {
 		root.right = right;
 
 		return root;
-
 	}
 
 	static TreeNode bTtoDLL(TreeNode root) {
 		
 		root = bTtoDLLUtil(root);
-		
 		while(root.left != null)
 			root = root.left;
-		
 		return root;
 	}
+	
 	static void printConvertedTree(TreeNode node) {
-		
 		while (node != null) {
 			System.out.println(node.val + " ");
 			node = node.right;
@@ -59,7 +56,6 @@ public class BLtoDLL {
 		root.right.left.right = new TreeNode(16);
 
 		TreeNode convertedNode = bTtoDLL(root);
-
 		printConvertedTree(convertedNode);
 	}
 }
