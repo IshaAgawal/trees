@@ -1,4 +1,3 @@
-
 public class BLtoDLL {
 
 	static TreeNode bTtoDLLUtil(TreeNode root) {
@@ -40,13 +39,7 @@ public class BLtoDLL {
 		return root;
 	}
 	static void printConvertedTree(TreeNode node) {
-
-		if (node == null)
-			return;
-
-		while (node != null && node.left != null)
-			node = node.left;
-
+		
 		while (node != null) {
 			System.out.println(node.val + " ");
 			node = node.right;
